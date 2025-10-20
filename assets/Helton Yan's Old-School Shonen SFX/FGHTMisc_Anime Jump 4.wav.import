@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dvf4urescqs8k"
+path="res://.godot/imported/FGHTMisc_Anime Jump 4.wav-036bdc6d4809f34d18dc7d4bb1e8fed7.sample"
+
+[deps]
+
+source_file="res://assets/Helton Yan's Old-School Shonen SFX/FGHTMisc_Anime Jump 4.wav"
+dest_files=["res://.godot/imported/FGHTMisc_Anime Jump 4.wav-036bdc6d4809f34d18dc7d4bb1e8fed7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

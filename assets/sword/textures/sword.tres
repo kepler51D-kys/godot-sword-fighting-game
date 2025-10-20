@@ -1,0 +1,35 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://ds121uy3s53aj"]
+
+[ext_resource type="Texture2D" uid="uid://u3hnrgiog5qi" path="res://assets/sword/textures/CoolSword_Cool_Sword_BaseColor.png" id="1_moqcu"]
+[ext_resource type="Texture2D" uid="uid://620y4pskgdlm" path="res://assets/sword/textures/CoolSword_Cool_Sword_Metallic.png" id="2_snxc1"]
+[ext_resource type="Texture2D" uid="uid://rleaonxhf21c" path="res://assets/sword/textures/CoolSword_Cool_Sword_Normal.png" id="3_7trol"]
+[ext_resource type="Texture2D" uid="uid://bev08alowu8r4" path="res://assets/sword/textures/CoolSword_Cool_Sword_Roughness.png" id="4_vavuu"]
+
+[sub_resource type="Shader" id="Shader_at1mw"]
+code = "shader_type spatial;
+
+uniform sampler2D base_color_map;
+uniform sampler2D normal_map;
+uniform sampler2D roughness_map;
+uniform sampler2D metallic_map;
+
+void fragment() {
+    vec4 base_color = texture(base_color_map, UV);
+    vec3 normal = texture(normal_map, UV).rgb * 2.0 - 1.0;
+    float roughness = texture(roughness_map, UV).r;
+    float metallic = texture(metallic_map, UV).r;
+
+    ALBEDO = base_color.rgb;
+    NORMAL = normalize(normal);
+    ROUGHNESS = roughness;
+    METALLIC = metallic;
+}
+"
+
+[resource]
+render_priority = 0
+shader = SubResource("Shader_at1mw")
+shader_parameter/base_color_map = ExtResource("1_moqcu")
+shader_parameter/normal_map = ExtResource("3_7trol")
+shader_parameter/roughness_map = ExtResource("4_vavuu")
+shader_parameter/metallic_map = ExtResource("2_snxc1")

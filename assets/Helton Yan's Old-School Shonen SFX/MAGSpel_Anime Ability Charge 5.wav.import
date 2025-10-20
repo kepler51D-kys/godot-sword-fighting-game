@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dw17q57hqpvtf"
+path="res://.godot/imported/MAGSpel_Anime Ability Charge 5.wav-bc4d236f4bf865caee47a9b84ad95290.sample"
+
+[deps]
+
+source_file="res://assets/Helton Yan's Old-School Shonen SFX/MAGSpel_Anime Ability Charge 5.wav"
+dest_files=["res://.godot/imported/MAGSpel_Anime Ability Charge 5.wav-bc4d236f4bf865caee47a9b84ad95290.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

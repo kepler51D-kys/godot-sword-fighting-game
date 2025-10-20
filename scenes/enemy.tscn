@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://oe0j2wvxnick"]
+
+[ext_resource type="Script" uid="uid://c5n4u388iyt4p" path="res://scripts/EnemyLogic/Enemy.cs" id="1_5uy6h"]
+[ext_resource type="Texture2D" uid="uid://e5iaxummipt2" path="res://assets/red.jpg" id="1_7p1mj"]
+[ext_resource type="Material" uid="uid://ds121uy3s53aj" path="res://assets/sword/textures/sword.tres" id="2_4ra3w"]
+[ext_resource type="ArrayMesh" uid="uid://dgppjfj1ye541" path="res://assets/sword/source/Sword.obj" id="3_5uy6h"]
+[ext_resource type="Script" uid="uid://b43pmacdhumvh" path="res://scripts/UI/HealthBar.cs" id="5_c4w8v"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_md0e3"]
+friction = 86.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_md0e3"]
+albedo_texture = ExtResource("1_7p1mj")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4ra3w"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_md0e3"]
+
+[node name="enemy" type="RigidBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+mass = 10.52
+physics_material_override = SubResource("PhysicsMaterial_md0e3")
+script = ExtResource("1_5uy6h")
+maxHealth = 10000.0
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6271331, 0)
+font_size = 128
+outline_size = 24
+uppercase = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_md0e3")
+mesh = SubResource("CapsuleMesh_4ra3w")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_md0e3")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.005, 0, 0, 0, 0.000868241, 0.00492404, 0, -0.00492404, 0.000868241, 0, 0, 0.820149)
+material_override = ExtResource("2_4ra3w")
+mesh = ExtResource("3_5uy6h")
+
+[node name="Health Bar" type="ProgressBar" parent="."]
+offset_left = 224.0
+offset_top = 6.0
+offset_right = 1059.0
+offset_bottom = 42.0
+script = ExtResource("5_c4w8v")

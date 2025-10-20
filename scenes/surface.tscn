@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6hg1f4ppljqa"]
+
+[ext_resource type="Texture2D" uid="uid://c3wxctifjxyyi" path="res://assets/concrete.jpg" id="1_exuij"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tm1d5"]
+friction = 200.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p7wa3"]
+size = Vector3(100, 0.5, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aisq3"]
+albedo_texture = ExtResource("1_exuij")
+
+[sub_resource type="BoxMesh" id="BoxMesh_7ehkb"]
+size = Vector3(100, 0.5, 100)
+
+[node name="Surface" type="StaticBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_tm1d5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_p7wa3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_aisq3")
+mesh = SubResource("BoxMesh_7ehkb")

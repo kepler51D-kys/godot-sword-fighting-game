@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bbrtxkmdc6fx1"
+path="res://.godot/imported/TOONWhis_Anime Falling 1.wav-e1fb3c14c26ac0b62bb14294ddcc6845.sample"
+
+[deps]
+
+source_file="res://assets/Helton Yan's Old-School Shonen SFX/TOONWhis_Anime Falling 1.wav"
+dest_files=["res://.godot/imported/TOONWhis_Anime Falling 1.wav-e1fb3c14c26ac0b62bb14294ddcc6845.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://r57o6ep63dfn"
+path="res://.godot/imported/MAGSpel_Anime Ability Ready 1.wav-3bd5f0c9640f0f736d4d85495d6a2a9e.sample"
+
+[deps]
+
+source_file="res://assets/Helton Yan's Old-School Shonen SFX/MAGSpel_Anime Ability Ready 1.wav"
+dest_files=["res://.godot/imported/MAGSpel_Anime Ability Ready 1.wav-3bd5f0c9640f0f736d4d85495d6a2a9e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

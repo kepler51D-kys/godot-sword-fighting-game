@@ -1,0 +1,129 @@
+[gd_scene load_steps=13 format=3 uid="uid://duca3m7d1gvx5"]
+
+[ext_resource type="Script" uid="uid://bpjhkhv1bj0pf" path="res://scripts/PlayerManager/Player.cs" id="1_smehm"]
+[ext_resource type="Script" uid="uid://cfof7nxuwqo6u" path="res://scripts/SwordManager/SwordManager.cs" id="4_dqkch"]
+[ext_resource type="Script" uid="uid://burfj832cyvkk" path="res://scripts/UI/SpeedLabel.cs" id="5_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://ckxayitvcmojq" path="res://assets/crosshair.png" id="6_tuyoq"]
+[ext_resource type="Script" uid="uid://dqg02e04wh16y" path="res://scripts/UI/ChargeLabel.cs" id="7_fjrip"]
+[ext_resource type="Script" uid="uid://cqrxdw8lfe75b" path="res://scripts/UI/timeSlowLeft.cs" id="8_smehm"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yghr8"]
+friction = 200.0
+rough = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ov2k4"]
+radius = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fr07s"]
+size = Vector3(7.475, 6.11, 16.255)
+
+[sub_resource type="SphereMesh" id="SphereMesh_lfkem"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tuyoq"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_smehm"]
+font_size = 32
+
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("except", "floorDetect", "camera")]
+script = ExtResource("1_smehm")
+horiSpeed = 1.0
+vertSpeed = 1.0
+speedMult = 1.0
+pullStrength = 500.0
+except = NodePath("playerV2")
+steerStrength = 0.5
+floorDetect = NodePath("rigidbody paired/floorDetect")
+camera = NodePath("rigidbody paired/Camera3D")
+Speed = 2000.0
+JumpVelocity = 500.0
+gravity = 10.0
+
+[node name="playerV2" type="RigidBody3D" parent="."]
+mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_yghr8")
+gravity_scale = 2.0
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="playerV2"]
+shape = SubResource("SphereShape3D_ov2k4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="playerV2"]
+
+[node name="rigidbody paired" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="rigidbody paired"]
+
+[node name="Area3D" type="Area3D" parent="rigidbody paired/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.72594)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rigidbody paired/Camera3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.3753498)
+shape = SubResource("BoxShape3D_fr07s")
+
+[node name="grappleManager" type="RayCast3D" parent="rigidbody paired/Camera3D"]
+target_position = Vector3(0, 0, 1)
+hit_back_faces = false
+debug_shape_custom_color = Color(0.98274976, 6.08854e-06, 1.540184e-06, 1)
+debug_shape_thickness = 5
+
+[node name="OmniLight3D" type="OmniLight3D" parent="rigidbody paired"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.648172, 0)
+
+[node name="floorDetect" type="RayCast3D" parent="rigidbody paired"]
+
+[node name="sword manager" type="Node3D" parent="." node_paths=PackedStringArray("attackBox", "body")]
+script = ExtResource("4_dqkch")
+attackBox = NodePath("../rigidbody paired/Camera3D/Area3D")
+body = NodePath("../playerV2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_lfkem")
+skeleton = NodePath("../rigidbody paired/Camera3D/grappleManager")
+
+[node name="SpeedLabel" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 65.0
+offset_right = 44.0
+offset_bottom = 110.0
+label_settings = SubResource("LabelSettings_tuyoq")
+script = ExtResource("5_qlg0r")
+
+[node name="Control" type="Control" parent="."]
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("6_tuyoq")
+stretch_mode = 3
+
+[node name="charge label" type="Label" parent="."]
+offset_left = 14.0
+offset_top = 167.0
+offset_right = 54.0
+offset_bottom = 212.0
+label_settings = SubResource("LabelSettings_smehm")
+script = ExtResource("7_fjrip")
+
+[node name="TimeSlowBar" type="ProgressBar" parent="."]
+offset_left = 1103.0
+offset_top = 8.0
+offset_right = 1144.0
+offset_bottom = 641.0
+fill_mode = 3
+show_percentage = false
+script = ExtResource("8_smehm")

@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpkgxdenv8kmy"]
+
+[ext_resource type="PackedScene" uid="uid://b6hg1f4ppljqa" path="res://scenes/surface.tscn" id="1_w7c3h"]
+
+[node name="Level" type="Node3D"]
+
+[node name="THE SUNN" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.872128, -0.483787, 0.0730968, 0.241955, -0.296588, 0.923847, -0.425265, 0.823399, 0.375717, -1.78931, 80.0094, 0.531143)
+light_color = Color(0.7243723, 0.21073428, 0, 1)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="Surface" parent="." instance=ExtResource("1_w7c3h")]
+
+[node name="Surface2" parent="." instance=ExtResource("1_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, -0.644341, 34.744896, -84.88145)
+
+[node name="Surface3" parent="." instance=ExtResource("1_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 119.12022, 117.585)
+
+[node name="Surface4" parent="." instance=ExtResource("1_w7c3h")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 115.00076, 118.65222, -2.295187)
+
+[node name="Surface5" parent="." instance=ExtResource("1_w7c3h")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -116.4086, 116.39663, -3.8307345)
+
+[node name="Surface6" parent="." instance=ExtResource("1_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.6682587, 119.343575, -119.92852)
+
+[node name="Surface7" parent="." instance=ExtResource("1_w7c3h")]
+transform = Transform3D(0.70710677, 0.70710695, 0, -0.70710677, 0.70710695, 0, 0, 0, 1.0000002, -81.37344, 34.3039, -3.0123367)
+
+[node name="Surface8" parent="." instance=ExtResource("1_w7c3h")]
+transform = Transform3D(0.7071067, -0.70710695, 0, 0.7071067, 0.70710695, 0, 0, 0, 1.0000002, 80.86364, 34.3039, -3.0123367)
+
+[node name="Surface9" parent="." instance=ExtResource("1_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 0.70710695, 0.70710695, 0, -0.70710695, 0.70710695, -0.644341, 34.3039, 82.45531)
+
+[node name="Surface10" parent="." instance=ExtResource("1_w7c3h")]
+transform = Transform3D(-0.70710677, -0.5792281, -0.4055799, 0, 0.57357657, -0.81915224, 0.70710677, -0.5792281, -0.4055799, 63.80655, 34.3039, 64.72347)
+
+[node name="Surface11" parent="." instance=ExtResource("1_w7c3h")]
+transform = Transform3D(-0.7071067, -0.5792281, 0.4055799, 0, 0.57357657, 0.81915224, -0.7071067, 0.5792281, -0.4055799, 63.80655, 34.3039, -66.81767)
+
+[node name="Surface12" parent="." instance=ExtResource("1_w7c3h")]
+transform = Transform3D(-0.7071067, 0.5792281, 0.4055799, 0, 0.57357657, -0.81915224, -0.7071067, -0.5792281, -0.4055799, -62.96824, 34.3039, 64.72347)
+
+[node name="Surface13" parent="." instance=ExtResource("1_w7c3h")]
+transform = Transform3D(-0.7071067, 0.5792281, -0.4055799, 0, 0.57357657, 0.81915224, 0.7071067, 0.5792281, -0.4055799, -62.96824, 34.3039, -69.189095)
+
+[node name="Surface14" parent="." instance=ExtResource("1_w7c3h")]
+transform = Transform3D(-3.090862e-08, -0.70710677, 0.70710677, 1, -4.371139e-08, 0, 3.090862e-08, 0.70710677, 0.70710677, 80.87164, 121.11476, -86.58833)
+
+[node name="Surface15" parent="." instance=ExtResource("1_w7c3h")]
+transform = Transform3D(-3.090862e-08, -0.7071067, -0.7071067, 1, -4.3711385e-08, 0, -3.090862e-08, -0.7071067, 0.7071067, -82.40199, 119.852844, -87.55817)
+
+[node name="Surface16" parent="." instance=ExtResource("1_w7c3h")]
+transform = Transform3D(3.090862e-08, 0.7071067, -0.7071067, 1, -4.3711385e-08, 0, -3.090862e-08, -0.7071067, -0.7071067, -81.57454, 115.19701, 81.626144)
+
+[node name="Surface17" parent="." instance=ExtResource("1_w7c3h")]
+transform = Transform3D(3.090862e-08, 0.7071067, 0.7071067, 1, -4.3711385e-08, 0, 3.090862e-08, 0.7071067, -0.7071067, 81.018936, 115.19701, 82.34441)

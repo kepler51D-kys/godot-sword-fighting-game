@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c11kbm1n6viu8"
+path="res://.godot/imported/FGHTMisc_Anime Throw 5.wav-c97da4c92ec76521d8f4d3b6e96dba3f.sample"
+
+[deps]
+
+source_file="res://assets/Helton Yan's Old-School Shonen SFX/FGHTMisc_Anime Throw 5.wav"
+dest_files=["res://.godot/imported/FGHTMisc_Anime Throw 5.wav-c97da4c92ec76521d8f4d3b6e96dba3f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
