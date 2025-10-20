@@ -19,9 +19,8 @@ public partial class Enemy : Node3D
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta) {
-		float healthProport = health/maxHealth;
-		
-	}
+        GD.Print(Settings.Instance.player.Position - Position);
+    }
 	public void receiveDamage(float dmg) {
 		health -= dmg;
 		if (health <= 0) {
@@ -36,7 +35,7 @@ public class StateMachine {
 	public attackState EnemyAttackState;
     public speedState SpeedState;
     public speedState EnemySpeedState;
-
+    public distanceState DistanceState;
     public StateMachine() {
         Health = healthState.high;
         AttackState = attackState.idle;
@@ -50,6 +49,12 @@ public class StateMachine {
 				(enemyAttacking && EnemySpeedState > speedState.slow);
 		
     }
+}
+public enum distanceState {
+	far,
+	medium,
+	close,
+	inRange
 }
 public enum healthState {
 	high, // above 0.75

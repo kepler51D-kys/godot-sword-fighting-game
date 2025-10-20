@@ -35,14 +35,14 @@ script = ExtResource("1_smehm")
 horiSpeed = 1.0
 vertSpeed = 1.0
 speedMult = 1.0
-pullStrength = 500.0
+pullStrength = 50.0
 except = NodePath("playerV2")
-steerStrength = 0.5
+steerStrength = 50.0
 floorDetect = NodePath("rigidbody paired/floorDetect")
 camera = NodePath("rigidbody paired/Camera3D")
 Speed = 2000.0
-JumpVelocity = 500.0
-gravity = 10.0
+JumpVelocity = 1000.0
+gravity = 20.0
 
 [node name="playerV2" type="RigidBody3D" parent="."]
 mass = 5.0

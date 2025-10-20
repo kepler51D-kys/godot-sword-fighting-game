@@ -28,10 +28,12 @@ public partial class Player
 		// targetDisplay.GlobalPosition = target;
 		if (Input.IsActionPressed("grapple")) {
 			Vector3 targetDir = target-child.Position;
-			targetDir = (
-				-RigidPair.GlobalTransform.Basis.Z.Normalized()*steerStrength + targetDir.Normalized()
-			).Normalized()*targetDir.Length();
-			child.ApplyCentralForce(targetDir*pullStrength*(float)delta);
+            float len = targetDir.Length();
+            targetDir = (
+                -RigidPair.GlobalTransform.Basis.Z.Normalized() * steerStrength +
+                targetDir.Normalized()*pullStrength
+            )*1000;
+			child.ApplyCentralForce(targetDir*(float)delta);
 			
 		}
 		if (Input.IsActionJustPressed("grapple")) {
