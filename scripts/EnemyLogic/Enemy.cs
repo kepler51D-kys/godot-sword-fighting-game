@@ -47,7 +47,7 @@ public class StateMachine {
 	public void process() {
         bool enemyAttacking = EnemyAttackState != attackState.idle;
         bool inCurrentDanger = EnemySpeedState > speedState.medium ||
-			(enemyAttacking && EnemySpeedState > speedState.slow);
+				(enemyAttacking && EnemySpeedState > speedState.slow);
 		
     }
 }

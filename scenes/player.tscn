@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://duca3m7d1gvx5"]
+[gd_scene load_steps=15 format=3 uid="uid://duca3m7d1gvx5"]
 
 [ext_resource type="Script" uid="uid://bpjhkhv1bj0pf" path="res://scripts/PlayerManager/Player.cs" id="1_smehm"]
+[ext_resource type="Texture2D" uid="uid://hl1xadgtecer" path="res://blue.png" id="3_fjrip"]
 [ext_resource type="Script" uid="uid://cfof7nxuwqo6u" path="res://scripts/SwordManager/SwordManager.cs" id="4_dqkch"]
 [ext_resource type="Script" uid="uid://burfj832cyvkk" path="res://scripts/UI/SpeedLabel.cs" id="5_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://ckxayitvcmojq" path="res://assets/crosshair.png" id="6_tuyoq"]
@@ -17,7 +18,11 @@ radius = 1.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_fr07s"]
 size = Vector3(7.475, 6.11, 16.255)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_smehm"]
+albedo_texture = ExtResource("3_fjrip")
+
 [sub_resource type="SphereMesh" id="SphereMesh_lfkem"]
+material = SubResource("StandardMaterial3D_smehm")
 
 [sub_resource type="LabelSettings" id="LabelSettings_tuyoq"]
 font_size = 32
