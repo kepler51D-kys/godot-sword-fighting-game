@@ -20,6 +20,9 @@ size = Vector3(7.475, 6.11, 16.255)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_smehm"]
 albedo_texture = ExtResource("3_fjrip")
+emission_enabled = true
+emission = Color(0.5803922, 0, 0, 1)
+emission_energy_multiplier = 544.9
 
 [sub_resource type="SphereMesh" id="SphereMesh_lfkem"]
 material = SubResource("StandardMaterial3D_smehm")

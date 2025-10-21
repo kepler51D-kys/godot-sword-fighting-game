@@ -32,9 +32,9 @@ public partial class Player
             targetDir = (
                 -RigidPair.GlobalTransform.Basis.Z.Normalized() * steerStrength +
                 targetDir.Normalized()*pullStrength
-            )*1000;
-			child.ApplyCentralForce(targetDir*(float)delta);
-			
+            )-RigidPair.GlobalTransform.Basis.Y*steerStrength;
+            GD.Print(targetDir);
+            child.ApplyCentralForce(targetDir*1000*(float)delta);
 		}
 		if (Input.IsActionJustPressed("grapple")) {
 			GetTarget();

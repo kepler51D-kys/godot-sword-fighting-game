@@ -11,6 +11,9 @@ friction = 86.7
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_md0e3"]
 albedo_texture = ExtResource("1_7p1mj")
+emission_enabled = true
+emission = Color(0, 0.47843137, 0, 1)
+emission_energy_multiplier = 16.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4ra3w"]
 
