@@ -9,13 +9,13 @@ public partial class HealthBar : ProgressBar {
 	public Enemy boss;
 	public bool initialised = false;
 	
-	public void init() {
-        boss = GetParent<Node3D>() as Enemy;
+	public void init(Enemy attach) {
+        boss = attach;
         initialised = true;
 	}
 	
-	public override void _Ready() {
-	}
+	// public override void _Ready() {
+    // }
 	
 	public override void _Process(double delta) {
 		if (initialised) {

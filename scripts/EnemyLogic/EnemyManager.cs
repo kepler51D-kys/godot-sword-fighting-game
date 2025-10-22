@@ -7,29 +7,30 @@ public partial class EnemyManager : Node3D
 {
 	PackedScene enemyTemplate = GD.Load<PackedScene>("res://scenes/enemy.tscn");
 	
-	List<Node> enemies = [];
+	public List<Node> enemies = [];
 	
 	public CharacterBody3D player;
 	
 	public override void _Ready()
 	{
-		SpawnEnemy();
+		// SpawnEnemy();
 		
-		Control healthbar = enemies[enemies.Count-1].GetNode<Control>("Health Bar");
-		if (healthbar is HealthBar script) {
-			script.init();
-		}
+		HealthBar healthBar = Settings.Instance.enemyHealthBar as HealthBar;
+		// if (healthbar is HealthBar script) {
+		healthBar.init(SpawnEnemy());
+		// }
 	}
 
 	public override void _Process(double delta)
 	{
 	}
 
-	public void SpawnEnemy() {
+	public Enemy SpawnEnemy() {
 		Node temp = enemyTemplate.Instantiate();
 		AddChild(temp);
 		temp.AddToGroup("enemies");
-		enemies.Add(temp);
+        enemies.Add(temp);
+        return temp as Enemy;
 	}
 }
 

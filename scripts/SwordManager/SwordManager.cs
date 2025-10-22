@@ -17,12 +17,11 @@ public partial class SwordManager : Node3D
 	[Export] Area3D attackBox;
 	[Export] RigidBody3D body;
 	public float chargeTime = 2;
-	Player parentScript;
     List<Node3D> enemies;
 
     public override void _Ready() {
-		parentScript = GetParent<Node3D>() as Player;
-		ProcessMode = Timer.ProcessModeEnum.Always;
+        Settings.Instance.swordManager = this;
+        ProcessMode = Timer.ProcessModeEnum.Always;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

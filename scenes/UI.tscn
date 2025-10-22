@@ -1,0 +1,120 @@
+[gd_scene load_steps=11 format=3 uid="uid://c8e3m58ybnhvw"]
+
+[ext_resource type="Script" uid="uid://b43pmacdhumvh" path="res://scripts/UI/HealthBar.cs" id="1_dj8aq"]
+[ext_resource type="Script" uid="uid://bf30k7xxtnqtg" path="res://scripts/Ui.cs" id="1_xpksx"]
+[ext_resource type="Script" uid="uid://burfj832cyvkk" path="res://scripts/UI/SpeedLabel.cs" id="2_ro3t7"]
+[ext_resource type="Texture2D" uid="uid://ckxayitvcmojq" path="res://assets/crosshair.png" id="3_5en4g"]
+[ext_resource type="Script" uid="uid://dqg02e04wh16y" path="res://scripts/UI/ChargeLabel.cs" id="4_ua6yw"]
+[ext_resource type="Script" uid="uid://cqrxdw8lfe75b" path="res://scripts/UI/timeSlowLeft.cs" id="5_75u2n"]
+[ext_resource type="Script" uid="uid://cpte7kp1q0mrt" path="res://scripts/UI/Fps.cs" id="6_3wlde"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5en4g"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_75u2n"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_xpksx"]
+font_size = 32
+
+[node name="Control" type="Control"]
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_xpksx")
+
+[node name="Health Bar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -417.5
+offset_right = 417.5
+offset_bottom = 13.0
+grow_horizontal = 2
+show_percentage = false
+script = ExtResource("1_dj8aq")
+
+[node name="SpeedLabel" type="Label" parent="."]
+layout_mode = 1
+offset_left = 4.0
+offset_top = 65.0
+offset_right = 44.0
+offset_bottom = 110.0
+label_settings = SubResource("LabelSettings_5en4g")
+script = ExtResource("2_ro3t7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_5en4g")
+stretch_mode = 3
+
+[node name="Control" type="Control" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="charge label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -45.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_75u2n")
+script = ExtResource("4_ua6yw")
+
+[node name="TimeSlowBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -316.5
+offset_bottom = 316.5
+grow_horizontal = 0
+grow_vertical = 2
+fill_mode = 3
+show_percentage = false
+script = ExtResource("5_75u2n")
+
+[node name="fps" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -45.0
+offset_right = 40.0
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_xpksx")
+script = ExtResource("6_3wlde")
