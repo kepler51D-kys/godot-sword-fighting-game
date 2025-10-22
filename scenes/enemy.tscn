@@ -12,7 +12,7 @@ friction = 86.7
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_md0e3"]
 albedo_texture = ExtResource("1_7p1mj")
 emission_enabled = true
-emission = Color(0, 0.47843137, 0, 1)
+emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 16.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4ra3w"]
@@ -26,7 +26,7 @@ axis_lock_angular_z = true
 mass = 10.52
 physics_material_override = SubResource("PhysicsMaterial_md0e3")
 script = ExtResource("1_5uy6h")
-maxHealth = 10000.0
+maxHealth = 20000.0
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6271331, 0)
@@ -51,5 +51,5 @@ mesh = ExtResource("3_5uy6h")
 offset_left = 224.0
 offset_top = 6.0
 offset_right = 1059.0
-offset_bottom = 42.0
+offset_bottom = 33.0
 script = ExtResource("5_c4w8v")
