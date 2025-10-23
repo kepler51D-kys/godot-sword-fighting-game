@@ -33,7 +33,7 @@ except = NodePath("playerV2")
 steerStrength = 10.0
 floorDetect = NodePath("rigidbody paired/floorDetect")
 camera = NodePath("rigidbody paired/Camera3D")
-Speed = 3000.0
+Speed = 5000.0
 JumpVelocity = 1000.0
 gravity = 20.0
 

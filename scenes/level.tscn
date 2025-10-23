@@ -6,7 +6,7 @@
 
 [node name="THE SUNN" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.872128, -0.483787, 0.0730968, 0.241955, -0.296588, 0.923847, -0.425265, 0.823399, 0.375717, -1.78931, 80.0094, 0.531143)
-light_color = Color(0.7243723, 0.21073428, 0, 1)
+light_color = Color(0.7201367, 0.18058637, 0.32507494, 1)
 light_bake_mode = 1
 shadow_enabled = true
 
