@@ -11,10 +11,9 @@ public partial class SwordManager : Node3D
     [Export] float heavyAttackCooldown = 2f;
 	public float timestopDurationLightAttack = 0.25f;
 	public float timestopDurationHeavyAttack = 0.75f;
-	// bool isTimestopped = false;
-	bool canLightAttack = true;
-	bool canHeavyAttack = true;
-	[Export] Area3D attackBox;
+	bool canAttack = true;
+    bool cooldown = false;
+    [Export] Area3D attackBox;
 	[Export] RigidBody3D body;
 	public float chargeTime = 2;
     List<Node3D> enemies;
@@ -25,8 +24,10 @@ public partial class SwordManager : Node3D
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta) {
+	public override void _PhysicsProcess(double delta) {
+		enemies = GetEnemiesInRange();
         CheckHeavyAttack(delta);
         CheckLightAttack(delta);
+        // GD.Print(canAttack, cooldown, enemies.Count);
     }
 }

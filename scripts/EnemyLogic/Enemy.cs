@@ -19,7 +19,7 @@ public partial class Enemy : Node3D
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta) {
-        GD.Print(Settings.Instance.player.Position - Position);
+        // GD.Print(Settings.Instance.player.Position - Position);
     }
 	public void receiveDamage(float dmg) {
 		health -= dmg;

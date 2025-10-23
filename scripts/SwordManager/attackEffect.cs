@@ -26,8 +26,7 @@ public partial class SwordManager
 	}
 	
 	public void ActivateTimestop(float time) {
-		canLightAttack = false;
-        canHeavyAttack = false;
+		canAttack = false;
         if (Settings.Instance.isTimestopped) {
 			return;
 		}
@@ -49,5 +48,6 @@ public partial class SwordManager
 			Settings.Instance.isTimestopped = false;
 		};
 		resumeTimer.Start();
-	}
+        canAttack = true;
+    }
 }

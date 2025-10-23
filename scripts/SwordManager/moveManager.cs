@@ -6,11 +6,11 @@ using System.Linq;
 public partial class SwordManager
 {
 	void CheckHeavyAttack(double delta) {
-		if (Input.IsActionPressed("heavy attack") && canHeavyAttack) {
+		if (Input.IsActionPressed("heavy attack") && canAttack && !cooldown) {
 			chargeTime += (float)delta;
 		}
 		if (Input.IsActionJustReleased("heavy attack")) {
-			if (canHeavyAttack && enemies.Count > 0) {
+			if (canAttack && enemies.Count > 0) {
 				ScreenFlash();
 				ActivateTimestop(timestopDurationHeavyAttack);
 				foreach (Node3D enemy in enemies) {
@@ -22,28 +22,27 @@ public partial class SwordManager
 						enemyscript.receiveDamage(heavyAttackDmg*speed*(float)(Math.Log(chargeTime,2f)-1));
 					}
 				}
-                canHeavyAttack = false;
             }
             else {
                 // punish player for missing heavy attack
             }
 			chargeTime = 2;
 
+            cooldown = true;
             var cooldownTimer = new Timer();
             AddChild(cooldownTimer);
 
             cooldownTimer.WaitTime = heavyAttackCooldown;
-            
+            cooldownTimer.ProcessMode = ProcessModeEnum.Pausable;
             cooldownTimer.OneShot = true;
             cooldownTimer.Timeout += () => {
-                canHeavyAttack = true;
+                cooldown = false;
             };
             cooldownTimer.Start();
 		}
 	}
 	void CheckLightAttack(double delta) {
-		enemies = GetEnemiesInRange();
-		if (Input.IsActionJustPressed("light attack") && canLightAttack && enemies.Count > 0) {
+        if (Input.IsActionJustPressed("light attack") && canAttack && enemies.Count > 0 && !cooldown) {
 			ScreenFlash();
 			ActivateTimestop(timestopDurationLightAttack);
 			foreach (Node3D enemy in enemies) {
@@ -55,15 +54,15 @@ public partial class SwordManager
 					enemyscript.receiveDamage(lightAttackDmg*speed);
 				}
 			}
-            canLightAttack = false;
+            cooldown = true;
             var cooldownTimer = new Timer();
             AddChild(cooldownTimer);
 
             cooldownTimer.WaitTime = lightAttackLen;
-
+            cooldownTimer.ProcessMode = ProcessModeEnum.Pausable;
             cooldownTimer.OneShot = true;
             cooldownTimer.Timeout += () => {
-                canLightAttack = true;
+                cooldown = false;
             };
             cooldownTimer.Start();
 		}

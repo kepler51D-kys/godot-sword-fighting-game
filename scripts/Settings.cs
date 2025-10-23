@@ -22,6 +22,9 @@ public partial class Settings : Node3D {
     public Settings() {
         _instance = this;
     }
+    public override void _Ready() {
+        // DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
+    }
 }
 public class UserInterface {
     public ProgressBar enemyHealthBar;

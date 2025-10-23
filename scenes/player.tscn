@@ -25,15 +25,15 @@ material = SubResource("StandardMaterial3D_smehm")
 
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("except", "floorDetect", "camera")]
 script = ExtResource("1_smehm")
-horiSpeed = 1.0
+horiSpeed = 0.9
 vertSpeed = 1.0
-speedMult = 1.0
+speedMult = 0.9
 pullStrength = 50.0
 except = NodePath("playerV2")
 steerStrength = 10.0
 floorDetect = NodePath("rigidbody paired/floorDetect")
 camera = NodePath("rigidbody paired/Camera3D")
-Speed = 2000.0
+Speed = 3000.0
 JumpVelocity = 1000.0
 gravity = 20.0
 
@@ -44,6 +44,7 @@ gravity_scale = 2.0
 continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 1
+angular_damp = 5.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="playerV2"]
 shape = SubResource("SphereShape3D_ov2k4")
