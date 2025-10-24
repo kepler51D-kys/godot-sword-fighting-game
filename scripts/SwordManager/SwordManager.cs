@@ -5,7 +5,8 @@ using System.Linq;
 
 public partial class SwordManager : Node3D
 {
-	[Export] float lightAttackDmg = 5f;
+    [Export] float chargeSpeed;
+    [Export] float lightAttackDmg = 5f;
     [Export] float lightAttackLen = 0.1f;
     [Export] float heavyAttackDmg = 5f;
     [Export] float heavyAttackCooldown = 2f;

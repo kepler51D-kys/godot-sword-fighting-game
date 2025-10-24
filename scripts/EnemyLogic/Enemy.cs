@@ -13,7 +13,8 @@ public partial class Enemy : Node3D
 	public override void _Ready()
 	{
 		label = GetChild<Label3D>(0);
-		health = maxHealth;
+        label.Billboard = BaseMaterial3D.BillboardModeEnum.Enabled;
+        health = maxHealth;
 		player = GetParent<Node3D>().GetChild<Node3D>(0);
 	}
 

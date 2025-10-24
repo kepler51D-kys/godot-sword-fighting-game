@@ -75,6 +75,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.648172, 0)
 
 [node name="sword manager" type="Node3D" parent="." node_paths=PackedStringArray("attackBox", "body")]
 script = ExtResource("4_dqkch")
+chargeSpeed = 2.0
 attackBox = NodePath("../rigidbody paired/Camera3D/Area3D")
 body = NodePath("../playerV2")
 

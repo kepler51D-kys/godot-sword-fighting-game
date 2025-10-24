@@ -7,7 +7,7 @@ public partial class SwordManager
 {
 	void CheckHeavyAttack(double delta) {
 		if (Input.IsActionPressed("heavy attack") && canAttack && !cooldown) {
-			chargeTime += (float)delta;
+			chargeTime += (float)delta * chargeSpeed;
 		}
 		if (Input.IsActionJustReleased("heavy attack")) {
 			if (canAttack && enemies.Count > 0) {

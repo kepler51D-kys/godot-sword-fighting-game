@@ -10,7 +10,8 @@ public partial class Settings : Node3D {
     public EnemyManager enemyManager;
     [Export] public ProgressBar enemyHealthBar;
     [Export] public ProgressBar TimeSlowBar;
-    [Export] public Label chargeLabel;
+    // [Export] public Label chargeLabel;
+    [Export] public ProgressBar chargeBar;
     [Export] public Label fpsLabel;
     [Export] public Label speedLabel;
     public RigidBody3D playerBody;

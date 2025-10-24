@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://oe0j2wvxnick"]
+[gd_scene load_steps=10 format=3 uid="uid://oe0j2wvxnick"]
 
 [ext_resource type="Script" uid="uid://c5n4u388iyt4p" path="res://scripts/EnemyLogic/Enemy.cs" id="1_5uy6h"]
 [ext_resource type="Texture2D" uid="uid://e5iaxummipt2" path="res://assets/red.jpg" id="1_7p1mj"]
 [ext_resource type="Material" uid="uid://ds121uy3s53aj" path="res://assets/sword/textures/sword.tres" id="2_4ra3w"]
+[ext_resource type="FontFile" uid="uid://dtfh427p7alpb" path="res://PressStart2P-Regular.ttf" id="2_c4w8v"]
 [ext_resource type="ArrayMesh" uid="uid://dgppjfj1ye541" path="res://assets/sword/source/Sword.obj" id="3_5uy6h"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_md0e3"]
@@ -29,6 +30,7 @@ maxHealth = 20000.0
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6271331, 0)
+font = ExtResource("2_c4w8v")
 font_size = 128
 outline_size = 24
 uppercase = true

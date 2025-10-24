@@ -1,21 +1,25 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8e3m58ybnhvw"]
+[gd_scene load_steps=12 format=3 uid="uid://c8e3m58ybnhvw"]
 
 [ext_resource type="Script" uid="uid://b43pmacdhumvh" path="res://scripts/UI/HealthBar.cs" id="1_dj8aq"]
-[ext_resource type="Script" uid="uid://bf30k7xxtnqtg" path="res://scripts/Ui.cs" id="1_xpksx"]
+[ext_resource type="Script" uid="uid://bf30k7xxtnqtg" path="res://scripts/UI/Ui.cs" id="1_xpksx"]
 [ext_resource type="Script" uid="uid://burfj832cyvkk" path="res://scripts/UI/SpeedLabel.cs" id="2_ro3t7"]
 [ext_resource type="Texture2D" uid="uid://ckxayitvcmojq" path="res://assets/crosshair.png" id="3_5en4g"]
+[ext_resource type="FontFile" uid="uid://dtfh427p7alpb" path="res://PressStart2P-Regular.ttf" id="3_24e4x"]
 [ext_resource type="Script" uid="uid://dqg02e04wh16y" path="res://scripts/UI/ChargeLabel.cs" id="4_ua6yw"]
 [ext_resource type="Script" uid="uid://cqrxdw8lfe75b" path="res://scripts/UI/timeSlowLeft.cs" id="5_75u2n"]
 [ext_resource type="Script" uid="uid://cpte7kp1q0mrt" path="res://scripts/UI/Fps.cs" id="6_3wlde"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5en4g"]
-font_size = 32
+font = ExtResource("3_24e4x")
+font_size = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_75u2n"]
-font_size = 32
+font = ExtResource("3_24e4x")
+font_size = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_xpksx"]
-font_size = 32
+font = ExtResource("3_24e4x")
+font_size = 24
 
 [node name="Control" type="Control"]
 layout_direction = 2
@@ -79,7 +83,6 @@ offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
 label_settings = SubResource("LabelSettings_75u2n")
-script = ExtResource("4_ua6yw")
 
 [node name="TimeSlowBar" type="ProgressBar" parent="."]
 layout_mode = 1
@@ -107,3 +110,22 @@ offset_right = 40.0
 grow_vertical = 0
 label_settings = SubResource("LabelSettings_xpksx")
 script = ExtResource("6_3wlde")
+
+[node name="ChargeBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -391.0
+offset_top = -27.0
+offset_right = 397.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0.9490196, 0.9490196, 1)
+theme_override_colors/font_outline_color = Color(0, 1, 0, 1)
+allow_greater = true
+allow_lesser = true
+show_percentage = false
+script = ExtResource("4_ua6yw")
